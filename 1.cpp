@@ -1070,7 +1070,78 @@
 
 
 
-// 2.8
+// // 2.8
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     int n;
+//     cin>>n;
+//     vector<int>a(n,-1);
+//     for(int i=0;i<n;i++)
+//     {
+//         cin>>a[i];
+//     }
+//     sort(a.begin(),a.end());
+//     int st=0;
+//     int end=n-1;
+//     for(int i=0;i<n;i++)
+//     {
+//         if(i%2==0)
+//         {
+//             cout<<a[st]<<" ";
+//             st++;
+//         }
+//         else
+//         {
+//             cout<<a[end]<<" ";
+//             end--;
+//         }
+//     }
+//     return 0;
+// }
+
+
+// // 2.9
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     int n;
+//     cin>>n;
+//     vector<int>a(n,-1);
+//     for(int i=0;i<n;i++)
+//     {
+//         cin>>a[i];
+//     }
+//     int freq=1;
+//     int maxE=a[0];
+//     for(int i=1;i<n;i++)
+//     {
+//         if(a[i]==maxE){
+//             freq++;
+//         }
+//         else if(freq==0){
+//             maxE=a[i];
+//             freq++;
+//         }
+//         else if(a[i]!=maxE){
+//             freq--;
+//         }
+//     }
+//     if(count(a.begin(),a.end(),maxE)>n/2)
+//     {
+//         cout<<maxE<<endl;
+//     }
+//     else
+//     {
+//         cout<<"not found"<<endl;
+//     }
+//     return 0;
+// }
+
+
+// 2.10
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -1083,20 +1154,17 @@ int main() {
         cin>>a[i];
     }
     sort(a.begin(),a.end());
-    int st=0;
-    int end=n-1;
-    for(int i=0;i<n;i++)
+    int sum=0;
+    int i;
+    for(i=0;i<n;i++)
     {
-        if(i%2==0)
+        if(sum+a[i]<=5000)
         {
-            cout<<a[st]<<" ";
-            st++;
+            sum+=a[i];
         }
         else
-        {
-            cout<<a[end]<<" ";
-            end--;
-        }
+        break;
     }
+    cout<<i<<endl;
     return 0;
 }
