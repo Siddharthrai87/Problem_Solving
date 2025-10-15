@@ -1141,30 +1141,66 @@
 // }
 
 
-// 2.10
+// // 2.10
+// #include <iostream>
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main() {
+//     int n;
+//     cin>>n;
+//     vector<int>a(n,-1);
+//     for(int i=0;i<n;i++)
+//     {
+//         cin>>a[i];
+//     }
+//     sort(a.begin(),a.end());
+//     int sum=0;
+//     int i;
+//     for(i=0;i<n;i++)
+//     {
+//         if(sum+a[i]<=5000)
+//         {
+//             sum+=a[i];
+//         }
+//         else
+//         break;
+//     }
+//     cout<<i<<endl;
+//     return 0;
+// }
+
+
+
+// 2.11
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int n;
-    cin>>n;
-    vector<int>a(n,-1);
-    for(int i=0;i<n;i++)
-    {
-        cin>>a[i];
-    }
-    sort(a.begin(),a.end());
+    string str1,str2;
+    cin>>str1>>str2;
+    int t;
+    cin>>t;
     int sum=0;
-    int i;
-    for(i=0;i<n;i++)
+    for(int i=0;i<t;i++)
     {
-        if(sum+a[i]<=5000)
-        {
-            sum+=a[i];
-        }
-        else
-        break;
+        int p;
+        cin>>p;
+        sum+=p;
     }
-    cout<<i<<endl;
+    string str3;
+    int siz=str1.size();
+    for(int i=0;i<siz;i++)
+    {
+        int ind=(i+sum)%siz;
+        str3+=str1[ind];
+    }
+    if(str3==str2)
+    {
+        cout<<"Password Accepted"<<endl;
+    }
+    else
+    {
+        cout<<"Try again"<<endl;
+    }
     return 0;
 }
